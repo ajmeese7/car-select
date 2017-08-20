@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Configure Your GT Super Sportcar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="car.css" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Configure Your GT Super Sportcar</h1>
+		<div class="mainContainer">
+			<div class="leftContainer">
+				<div id="config">
+					<h2>Configuration</h2>
+					<p>$17,790.00</p>
+					<input type="radio" name="configuration" value="17790" checked> GT Manual<br>
+					<p>$18,590.00</p>
+					<input type="radio" name="configuration" value="18590"> GT Automatic<br>
+					<p>$22,455.00</p>
+					<input type="radio" name="configuration" value="22455"> GT-S Manual<br>
+					<p>$23,155.00</p>
+					<input class="bottomFencePost" type="radio" name="configuration" value="23155"> GT-S Sportshift
+				</div>
+				<div>
+					<h2>Factory Options</h2>
+					<p>$1235.00</p>
+					<input type="radio" name="factory" value="1235" checked> Option Combo #1<br>
+					<ul><li>Power Windows, Doors, Cruise Control</li></ul>
+					<p>$3354.00</p>
+					<input type="radio" name="factory" value="3354"> Option Combo #2<br>
+					<ul>
+						<li>Rear Spoiler and Fog Lamps</li>
+						<li>Keyless Entry</li>
+						<li>Power Tilt & Slide Moonroof</li>
+						<li>Power Windows, Doors, Cruise Control</li>
+					</ul>
+					<p>$0</p>
+					<input class="bottomFencePost" type="radio" name="factory" value="0"> No Combo
+				</div>
+				<div>
+					<h2>Dealer Options</h2>
+					<p>$550.00</p>
+					<input class="checks" type="checkbox" name="dealer1" value="550"> Upgraded Stereo System<br>
+					<p>$399.00</p>
+					<input class="checks" type="checkbox" name="dealer2" value="399"> VIP Security System<br>
+					<p>$295.00</p>
+					<input class="checks" id="bottomFencePost" type="checkbox" name="dealer3" value="295"> Auto-Dimming Mirror
+				</div>
+				<div id="priceTotal">
+					<h2>Total Price</h2>
+					<textarea id="totalTextArea"></textarea>
+					<input id="total" type="button" value="Calculate Total" />
+				</div>
+			</div>
+
+			<div id="rightContainer">
+				<h2>Choose a Color</h2>
+				<div id="scrollBlock">
+					<select id="select" size="5" onchange="setImage(this);">
+						<option value="images/red.jpg" alt="Red car" selected>Red</option>
+						<option value="images/blue.jpg" alt="Blue car">Blue</option>
+						<option value="images/silver.jpg" alt="Silver car">Silver</option>
+						<option value="images/white.jpg" alt="White car">White</option>
+						<option value="images/black.jpg" alt="Black car">Black</option>
+					</select>
+				</div>
+
+				<img name="image-swap" src="images/red.jpg">
+			</div>
+		</div>
+
+		<script>
+			function addMoney() {
+				// TODO: Find a different method of solving this problem
+				var configuration = Number(document.querySelector('input[name="configuration"]:checked').value);
+				var factory = Number(document.querySelector('input[name="factory"]:checked').value);
+				var checks = document.getElementsByClassName('checks');
+				var checksTotalValue = 0;
+
+				for (i = 0; i < 3; i++) {
+					if (checks[i].checked === true) {
+						checksTotalValue += parseInt(checks[i].value);
+					}
+				}
+
+				var total = configuration + factory + checksTotalValue;
+				total = total.toLocaleString(); // adds commas
+				total = total + ".00"
+				document.getElementById("totalTextArea").value = total;
+			}
+
+			var button = document.getElementById("total");
+			button.addEventListener("click", addMoney, false);
+
+			function setImage(select){
+				var image = document.getElementsByName("image-swap")[0];
+				image.src = select.options[select.selectedIndex].value;
+			}
+		</script>
+	</body>
+</html>

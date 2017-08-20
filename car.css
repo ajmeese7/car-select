@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: sans-serif;
+	margin-top: 17.5px;
+	margin-left: 12.5px;
+}
+
+h2 {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	background-color: gray;
+	padding: 2.5px 0px 2.5px 7.5px;
+	color: white;
+	margin: 3.25px 4.235px 0px 4.235px;
+	font-family: 'Raleway', sans-serif;
+	font-variant: small-caps;
+}
+
+img {
+	float: right;
+	width: 70%;
+}
+
+input[type="button"] {
+	width: 116px;
+	height: 22px;
+	float: right;
+	margin-top: 9px;
+	margin-right: 5.5px;
+}
+
+#config {
+	margin-top: 0px;
+}
+
+textarea {
+	height: 18px;
+	margin: 10px 0px 5px 5px;
+}
+
+#priceTotal {
+	margin-bottom: 15px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-left: 15px;
+	margin-top: 12.5px;
+}
+
+li {
+	margin-left: 13px;
+}
+
+div p {
+	margin-top: 9.75px;
+}
+
+.bottomFencePost,
+#bottomFencePost {
+	margin-bottom: 12.5px;
+}
+
+.mainContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	margin-top: 17.5px;
+}
+
+.leftContainer div,
+#rightContainer {
+	border: 1px solid black;
+}
+
+.leftContainer div {
+	margin-top: 12px;
+}
+
+.leftContainer p {
+	float: right;
+	margin-right: 8px;
+}
+
+.leftContainer,
+ul,
+#rightContainer {
+	margin-left: 25px;
+}
+
+.leftContainer {
+	width: 437.5px;
+}
+
+#rightContainer {
+	width: 355px;
+	height: 150px;
+}
+
+#scrollBlock {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	border: solid grey 1px;
+	margin-left: 13px;
+	margin-top: 6.5px;
+}
+
+#scrollBlock select {
+	padding: 10px;
+	margin: -5px -20px -5px -5px;
+}
